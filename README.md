@@ -31,3 +31,19 @@ Potential hyperparameters that can be tuned are {[Read more here](http://scikit-
 - min_samples_leaf
 
 You can use following parametrs to check your function
+```from scipy.stats import randint as sp_randint
+
+grid_param = { 
+                "n_estimators"      : [250, 300],
+                "max_features"      : [3, 5],
+                "max_depth"         : [10, 20],
+                "min_samples_split" : [2, 4]
+             }
+             
+
+random_param = {
+              "max_depth": [3, None],
+              "max_features": sp_randint(1, 11),
+              "min_samples_split": sp_randint(2, 11),
+              "min_samples_leaf": sp_randint(1, 11)
+               }```
